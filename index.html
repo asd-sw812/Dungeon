@@ -30,5 +30,4 @@ el('actions').innerHTML='<button onclick="window.scout()" '+(s.rumor||s.done?'di
 el('monsters').innerHTML=s.monsters.map(m=>'<div class="item"><b>'+m.e+' '+m.n+'</b> · '+types[m.t]+'형에 강함<br><small>방어 '+m.p+' / 방 '+(m.room+1)+' / 특성: '+(m.traits.length?m.traits.map(t=>traits[t].n).join(', '):'없음')+'</small></div>').join('');
 el('logs').innerHTML=s.logs.map(l=>'<div class="log '+l.kind+'">'+l.msg+'</div>').join('');document.querySelectorAll('button').forEach(b=>{if(s.done&&b.textContent.includes('다음 날'))b.disabled=true})}
 window.choose=r=>{s.selected=r;draw()};window.scout=scout;window.work=work;window.rest=rest;window.swap=swap;window.trait=trait;window.advance=advance;window.restart=()=>{if(confirm('처음부터 시작할까요?'))start()};start();
-})();
 </script></body></html>
